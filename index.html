@@ -1,1623 +1,2189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Shikha'Z Rental | Rent • Style • Celebrate</title>
-  <meta name="description" content="Shikha'Z Rental – Premium Lehenga, Saree, Suits, Gowns & Indo-Western outfits on rent in Purnea, Bihar.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --ivory: #f8f1e6;
-      --cream: #fffaf2;
-      --gold: #b88942;
-      --gold-light: #d7b777;
-      --wine: #551d27;
-      --wine-dark: #351116;
-      --brown: #3c2925;
-      --muted: #806f68;
-      --white: #ffffff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "DM Sans", sans-serif;
-      background: var(--ivory);
-      color: var(--brown);
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* ---------- NAVBAR ---------- */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      transition: .4s ease;
-    }
-
-    header.scrolled {
-      background: rgba(255,250,242,.94);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 5px 25px rgba(53,17,22,.08);
-    }
-
-    .nav {
-      max-width: 1250px;
-      margin: auto;
-      padding: 20px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 29px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--wine-dark);
-    }
-
-    .brand span {
-      color: var(--gold);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      bottom: -7px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--gold);
-      transition: .3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-btn {
-      background: var(--wine);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    .menu {
-      display: none;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 110px 7% 60px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(184,137,66,.14), transparent 35%),
-        linear-gradient(120deg, #fbf5eb, #f1e2d0);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(184,137,66,.28);
-      border-radius: 50%;
-      right: -180px;
-      top: 80px;
-    }
-
-    .hero-content {
-      max-width: 650px;
-      position: relative;
-      z-index: 2;
-      animation: fadeUp 1s ease;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      letter-spacing: 4px;
-      font-size: 12px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      font-weight: 600;
-    }
-
-    h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(55px, 7vw, 94px);
-      line-height: .88;
-      font-weight: 500;
-      color: var(--wine-dark);
-      margin-bottom: 25px;
-    }
-
-    h1 span {
-      display: block;
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    .hero-text {
-      max-width: 480px;
-      line-height: 1.8;
-      color: var(--muted);
-      margin-bottom: 35px;
-      font-size: 15px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 15px 26px;
-      border-radius: 40px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: .3s;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .btn-primary {
-      background: var(--wine);
-      color: white;
-      box-shadow: 0 10px 25px rgba(85,29,39,.2);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: var(--wine-dark);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--gold);
-      color: var(--wine);
-    }
-
-    .btn-outline:hover {
-      background: var(--gold);
-      color: white;
-    }
-
-    .hero-image {
-      height: 620px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 1.3s ease;
-    }
-
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      width: 490px;
-      height: 560px;
-      border: 1px solid rgba(184,137,66,.45);
-      border-radius: 250px 250px 20px 20px;
-      transform: rotate(5deg);
-    }
-
-    .fashion-img {
-      width: 420px;
-      height: 540px;
-      object-fit: cover;
-      border-radius: 230px 230px 15px 15px;
-      position: relative;
-      z-index: 2;
-      box-shadow: 0 25px 60px rgba(53,17,22,.18);
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 5;
-      bottom: 35px;
-      left: 25px;
-      background: rgba(255,250,242,.94);
-      backdrop-filter: blur(10px);
-      padding: 20px 25px;
-      box-shadow: 0 15px 35px rgba(53,17,22,.12);
-      border-left: 3px solid var(--gold);
-    }
-
-    .floating-card small {
-      color: var(--muted);
-      display: block;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .floating-card strong {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-      color: var(--wine);
-    }
-
-    /* ---------- SECTION ---------- */
-
-    section {
-      padding: 100px 7%;
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 700px;
-      margin: auto auto 55px;
-    }
-
-    .section-kicker {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      margin-bottom: 13px;
-    }
-
-    .section-title {
-      font-family: "Cormorant Garamond", serif;
-      color: var(--wine-dark);
-      font-size: clamp(40px, 5vw, 62px);
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .section-desc {
-      margin-top: 17px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    /* ---------- CATEGORIES ---------- */
-
-    .categories {
-      background: var(--cream);
-    }
-
-    .category-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
-    .category {
-      position: relative;
-      height: 310px;
-      overflow: hidden;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-
-    .category img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .6s ease;
-    }
-
-    .category::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 35%, rgba(40,10,15,.78));
-    }
-
-    .category:hover img {
-      transform: scale(1.08);
-    }
-
-    .category-info {
-      position: absolute;
-      z-index: 2;
-      bottom: 22px;
-      left: 20px;
-      color: white;
-    }
-
-    .category-info h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
-      font-weight: 500;
-    }
-
-    .category-info p {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 3px;
-      opacity: .8;
-    }
-
-    /* ---------- COLLECTION ---------- */
-
-    .collection {
-      background: var(--ivory);
-    }
-
-    .collection-grid {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .product {
-      background: var(--cream);
-      overflow: hidden;
-      transition: .35s;
-      box-shadow: 0 8px 25px rgba(53,17,22,.05);
-    }
-
-    .product:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 20px 45px rgba(53,17,22,.11);
-    }
-
-    .product-img {
-      height: 390px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .product-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .6s;
-    }
-
-    .product:hover .product-img img {
-      transform: scale(1.04);
-    }
-
-    .tag {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background: rgba(255,250,242,.94);
-      color: var(--wine);
-      padding: 7px 12px;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .product-info {
-      padding: 22px;
-    }
-
-    .product-category {
-      color: var(--gold);
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .product-info h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 27px;
-      font-weight: 600;
-      margin: 5px 0 8px;
-      color: var(--wine-dark);
-    }
-
-    .price {
-      color: var(--wine);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .price span {
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 400;
-    }
-
-    .rent-btn {
-      display: block;
-      text-align: center;
-      border: 1px solid rgba(184,137,66,.55);
-      margin-top: 17px;
-      padding: 11px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--wine);
-      transition: .3s;
-    }
-
-    .rent-btn:hover {
-      background: var(--wine);
-      color: white;
-      border-color: var(--wine);
-    }
-
-    /* ---------- ABOUT ---------- */
-
-    .about {
-      background: var(--wine-dark);
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about::before {
-      content: "SZ";
-      position: absolute;
-      right: -30px;
-      top: -70px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 400px;
-      color: rgba(255,255,255,.025);
-    }
-
-    .about-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 80px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .about-badge {
-      width: 270px;
-      height: 270px;
-      border: 1px solid rgba(215,183,119,.5);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      position: relative;
-    }
-
-    .about-badge::after {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(215,183,119,.25);
-      border-radius: 50%;
-    }
-
-    .about-badge span {
-      font-family: "Cormorant Garamond", serif;
-      color: var(--gold-light);
-      font-size: 55px;
-      font-style: italic;
-    }
-
-    .about .section-kicker {
-      color: var(--gold-light);
-    }
-
-    .about h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 58px;
-      font-weight: 500;
-      line-height: .95;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      color: rgba(255,255,255,.68);
-      line-height: 1.9;
-      font-size: 14px;
-      max-width: 570px;
-    }
-
-    .about-points {
-      display: flex;
-      gap: 35px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-
-    .point strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 26px;
-      color: var(--gold-light);
-    }
-
-    .point span {
-      color: rgba(255,255,255,.6);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* ---------- HOW IT WORKS ---------- */
-
-    .steps {
-      background: var(--cream);
-    }
-
-    .steps-grid {
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 30px;
-    }
-
-    .step {
-      text-align: center;
-      padding: 35px 25px;
-      border: 1px solid rgba(184,137,66,.2);
-    }
-
-    .step-number {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 48px;
-      color: var(--gold);
-    }
-
-    .step h3 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      color: var(--wine);
-      margin: 8px 0;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    /* ---------- CTA ---------- */
-
-    .cta {
-      text-align: center;
-      background:
-        linear-gradient(rgba(53,17,22,.86), rgba(53,17,22,.86)),
-        url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85") center/cover;
-      color: white;
-      padding: 110px 7%;
-    }
-
-    .cta .section-kicker {
-      color: var(--gold-light);
-    }
-
-    .cta h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(45px,6vw,75px);
-      font-weight: 500;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      max-width: 550px;
-      margin: auto auto 30px;
-      color: rgba(255,255,255,.7);
-      line-height: 1.7;
-      font-size: 14px;
-    }
-
-    /* ---------- CONTACT ---------- */
-
-    .contact {
-      background: var(--ivory);
-    }
-
-    .contact-grid {
-      max-width: 1050px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-    }
-
-    .contact h2 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 55px;
-      color: var(--wine-dark);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
-
-    .contact-text {
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 14px;
-      margin-bottom: 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 17px;
-      margin-bottom: 22px;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .contact-item small {
-      display: block;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 9px;
-      margin-bottom: 3px;
-    }
-
-    .contact-item p,
-    .contact-item a {
-      color: var(--wine-dark);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .map {
-      min-height: 350px;
-      background:
-        linear-gradient(rgba(85,29,39,.08),rgba(85,29,39,.08)),
-        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80") center/cover;
-      display: flex;
-      align-items: flex-end;
-      padding: 22px;
-    }
-
-    .map-card {
-      background: rgba(255,250,242,.95);
-      padding: 20px;
-      width: 100%;
-    }
-
-    .map-card strong {
-      color: var(--wine);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 24px;
-    }
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-      background: #211012;
-      color: rgba(255,255,255,.7);
-      padding: 45px 7% 25px;
-      text-align: center;
-    }
-
-    .footer-brand {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
-      color: white;
-      letter-spacing: 2px;
-    }
-
-    .footer-brand span {
-      color: var(--gold-light);
-    }
-
-    footer p {
-      font-size: 11px;
-      margin: 10px 0 25px;
-      letter-spacing: 1px;
-    }
-
-    .social {
-      display: inline-flex;
-      gap: 12px;
-    }
-
-    .social a {
-      border: 1px solid rgba(215,183,119,.45);
-      padding: 10px 17px;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 20px;
-      margin-top: 30px;
-      font-size: 10px;
-    }
-
-    /* ---------- ANIMATIONS ---------- */
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* ---------- MOBILE ---------- */
-
-    @media(max-width: 900px) {
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: var(--cream);
-        flex-direction: column;
-        padding: 25px;
-        box-shadow: 0 15px 25px rgba(0,0,0,.08);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu {
-        display: block;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 130px;
-      }
-
-      .hero-content {
-        margin: auto;
-      }
-
-      .hero-text {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-image {
-        height: 500px;
-        margin-top: 30px;
-      }
-
-      .fashion-img {
-        width: 320px;
-        height: 420px;
-      }
-
-      .hero-image::before {
-        width: 370px;
-        height: 440px;
-      }
-
-      .category-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .category:last-child {
-        grid-column: span 2;
-      }
-
-      .collection-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .about-inner {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width: 600px) {
-
-      section {
-        padding: 75px 5%;
-      }
-
-      .brand {
-        font-size: 23px;
-      }
-
-      .hero {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      h1 {
-        font-size: 60px;
-      }
-
-      .hero-image {
-        height: 430px;
-      }
-
-      .fashion-img {
-        width: 275px;
-        height: 370px;
-      }
-
-      .hero-image::before {
-        width: 310px;
-        height: 390px;
-      }
-
-      .floating-card {
-        bottom: 10px;
-        left: 5px;
-      }
-
-      .category-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
-
-      .category {
-        height: 230px;
-      }
-
-      .category-info h3 {
-        font-size: 25px;
-      }
-
-      .collection-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product-img {
-        height: 430px;
-      }
-
-      .about h2 {
-        font-size: 48px;
-      }
-
-      .contact h2 {
-        font-size: 47px;
-      }
-
-      .map {
-        min-height: 280px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shikha'Z Rental | Rent • Style • Celebrate</title>
+
+<meta name="description" content="Shikha'Z Rental – Premium Lehenga, Saree, Suits, Gowns & Indo-Western outfits on rent in Purnea, Bihar.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --ivory:#faf4ea;
+  --cream:#fffaf3;
+  --gold:#b88a45;
+  --gold2:#d7b77b;
+  --wine:#641f2b;
+  --wineDark:#351217;
+  --brown:#392522;
+  --muted:#806e67;
+  --white:#fff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--ivory);
+  color:var(--brown);
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+/* NAVBAR */
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:999;
+  transition:.35s;
+}
+
+header.scrolled{
+  background:rgba(255,250,243,.95);
+  backdrop-filter:blur(14px);
+  box-shadow:0 5px 25px rgba(53,18,23,.08);
+}
+
+.nav{
+  max-width:1250px;
+  margin:auto;
+  padding:19px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logoText{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  font-weight:700;
+  letter-spacing:3px;
+  color:var(--wineDark);
+}
+
+.logoText span{
+  color:var(--gold);
+}
+
+.navLinks{
+  display:flex;
+  gap:30px;
+  align-items:center;
+}
+
+.navLinks a{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  position:relative;
+}
+
+.navLinks a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  width:0;
+  height:1px;
+  background:var(--gold);
+  transition:.3s;
+}
+
+.navLinks a:hover:after{
+  width:100%;
+}
+
+.navButton{
+  background:var(--wine);
+  color:white;
+  padding:12px 20px;
+  border-radius:30px;
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.menu{
+  display:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:120px 7% 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:50px;
+  background:
+  radial-gradient(circle at 80% 20%,rgba(184,138,69,.16),transparent 35%),
+  linear-gradient(120deg,#fcf7ef,#f0e0cd);
+  overflow:hidden;
+}
+
+.heroText{
+  max-width:620px;
+}
+
+.kicker{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:600;
+  margin-bottom:17px;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(58px,7vw,94px);
+  font-weight:500;
+  line-height:.86;
+  color:var(--wineDark);
+}
+
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+  font-style:italic;
+}
+
+.heroDescription{
+  max-width:510px;
+  margin:27px 0 32px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.9;
+}
+
+.buttons{
+  display:flex;
+  gap:13px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:14px 25px;
+  border-radius:40px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:10px;
+  transition:.3s;
+  display:inline-block;
+}
+
+.primary{
+  background:var(--wine);
+  color:white;
+}
+
+.primary:hover{
+  background:var(--wineDark);
+  transform:translateY(-3px);
+}
+
+.outline{
+  border:1px solid var(--gold);
+  color:var(--wine);
+}
+
+.outline:hover{
+  background:var(--gold);
+  color:white;
+}
+
+.heroVisual{
+  position:relative;
+  height:600px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.heroCircle{
+  position:absolute;
+  width:500px;
+  height:570px;
+  border:1px solid rgba(184,138,69,.45);
+  border-radius:260px 260px 25px 25px;
+  transform:rotate(5deg);
+}
+
+.heroImage{
+  width:420px;
+  height:530px;
+  object-fit:cover;
+  border-radius:240px 240px 15px 15px;
+  position:relative;
+  z-index:2;
+  box-shadow:0 25px 60px rgba(53,18,23,.18);
+}
+
+.priceCard{
+  position:absolute;
+  z-index:4;
+  bottom:25px;
+  left:10px;
+  background:rgba(255,250,243,.95);
+  padding:17px 23px;
+  border-left:3px solid var(--gold);
+  box-shadow:0 15px 35px rgba(53,18,23,.13);
+}
+
+.priceCard small{
+  display:block;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:9px;
+}
+
+.priceCard strong{
+  font-family:"Cormorant Garamond",serif;
+  font-size:26px;
+  color:var(--wine);
+}
+
+/* SECTIONS */
+
+section{
+  padding:95px 7%;
+}
+
+.sectionHead{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 50px;
+}
+
+.sectionTitle{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(42px,5vw,62px);
+  color:var(--wineDark);
+  font-weight:500;
+  line-height:1;
+}
+
+.sectionDescription{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+  margin-top:15px;
+}
+
+/* CATEGORIES */
+
+.categories{
+  background:var(--cream);
+}
+
+.categoryGrid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:14px;
+}
+
+.category{
+  height:300px;
+  position:relative;
+  overflow:hidden;
+}
+
+.category img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.category:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 30%,rgba(45,10,15,.8));
+}
+
+.category:hover img{
+  transform:scale(1.08);
+}
+
+.categoryInfo{
+  position:absolute;
+  z-index:2;
+  bottom:20px;
+  left:19px;
+  color:white;
+}
+
+.categoryInfo h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:29px;
+}
+
+.categoryInfo p{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  opacity:.8;
+}
+
+/* LEHENGA COLLECTION */
+
+.collection{
+  background:var(--ivory);
+}
+
+.productGrid{
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.product{
+  background:var(--cream);
+  box-shadow:0 8px 25px rgba(53,18,23,.06);
+  transition:.35s;
+  overflow:hidden;
+}
+
+.product:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(53,18,23,.13);
+}
+
+.productImage{
+  height:440px;
+  position:relative;
+  overflow:hidden;
+  background:#eee;
+  cursor:pointer;
+}
+
+.productImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.product:hover .productImage img{
+  transform:scale(1.04);
+}
+
+.productNumber{
+  position:absolute;
+  top:13px;
+  left:13px;
+  background:rgba(255,250,243,.94);
+  color:var(--wine);
+  padding:7px 11px;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+.productInfo{
+  padding:19px 20px 21px;
+}
+
+.productCategory{
+  color:var(--gold);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.productInfo h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+  color:var(--wineDark);
+  margin:4px 0;
+}
+
+.productPrice{
+  color:var(--wine);
+  font-size:14px;
+  font-weight:600;
+}
+
+.productPrice span{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:400;
+}
+
+.whatsappBtn{
+  display:block;
+  text-align:center;
+  border:1px solid rgba(184,138,69,.55);
+  padding:11px;
+  margin-top:15px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--wine);
+  transition:.3s;
+}
+
+.whatsappBtn:hover{
+  background:var(--wine);
+  color:white;
+}
+
+/* ABOUT */
+
+.about{
+  background:var(--wineDark);
+  color:white;
+}
+
+.aboutGrid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  align-items:center;
+  gap:80px;
+}
+
+.aboutBadge{
+  width:270px;
+  height:270px;
+  border:1px solid rgba(215,183,123,.5);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+}
+
+.aboutBadge span{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--gold2);
+  font-size:48px;
+  font-style:italic;
+}
+
+.about .kicker{
+  color:var(--gold2);
+}
+
+.about h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:57px;
+  font-weight:500;
+  line-height:.95;
+  margin-bottom:20px;
+}
+
+.about p{
+  color:rgba(255,255,255,.67);
+  line-height:1.9;
+  font-size:14px;
+}
+
+.stats{
+  display:flex;
+  gap:35px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.stat strong{
+  display:block;
+  color:var(--gold2);
+  font-family:"Cormorant Garamond",serif;
+  font-size:27px;
+}
+
+.stat span{
+  color:rgba(255,255,255,.58);
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+/* HOW */
+
+.how{
+  background:var(--cream);
+}
+
+.steps{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.step{
+  text-align:center;
+  padding:35px 25px;
+  border:1px solid rgba(184,138,69,.22);
+}
+
+.stepNumber{
+  color:var(--gold);
+  font-family:"Cormorant Garamond",serif;
+  font-size:48px;
+}
+
+.step h3{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--wine);
+  font-size:28px;
+  margin:5px 0 8px;
+}
+
+.step p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:13px;
+}
+
+/* CTA */
+
+.cta{
+  text-align:center;
+  color:white;
+  background:
+  linear-gradient(rgba(53,18,23,.9),rgba(53,18,23,.9)),
+  url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85")
+  center/cover;
+}
+
+.cta .kicker{
+  color:var(--gold2);
+}
+
+.cta h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(48px,6vw,75px);
+  font-weight:500;
+  line-height:1;
+}
+
+.cta p{
+  max-width:550px;
+  margin:18px auto 28px;
+  color:rgba(255,255,255,.68);
+  line-height:1.8;
+  font-size:14px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:var(--ivory);
+}
+
+.contactGrid{
+  max-width:1050px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.contact h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:57px;
+  color:var(--wineDark);
+  line-height:.95;
+  margin-bottom:20px;
+}
+
+.contactText{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:28px;
+}
+
+.contactItem{
+  display:flex;
+  gap:15px;
+  margin-bottom:21px;
+}
+
+.contactIcon{
+  width:38px;
+  height:38px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  flex-shrink:0;
+}
+
+.contactItem small{
+  display:block;
+  color:var(--gold);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:4px;
+}
+
+.contactItem p,
+.contactItem a{
+  font-size:13px;
+  color:var(--wineDark);
+  line-height:1.5;
+}
+
+.locationBox{
+  min-height:350px;
+  background:
+  linear-gradient(rgba(85,29,39,.12),rgba(85,29,39,.12)),
+  url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80")
+  center/cover;
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+}
+
+.locationCard{
+  background:rgba(255,250,243,.95);
+  padding:20px;
+  width:100%;
+}
+
+.locationCard strong{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--wine);
+  font-size:25px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#211013;
+  color:rgba(255,255,255,.65);
+  text-align:center;
+  padding:45px 7% 25px;
+}
+
+.footerLogo{
+  font-family:"Cormorant Garamond",serif;
+  color:white;
+  font-size:34px;
+  letter-spacing:2px;
+}
+
+.footerLogo span{
+  color:var(--gold2);
+}
+
+footer p{
+  font-size:10px;
+  letter-spacing:2px;
+  margin:9px 0 23px;
+}
+
+.social{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.social a{
+  border:1px solid rgba(215,183,123,.4);
+  padding:10px 17px;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.copyright{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:28px;
+  padding-top:20px;
+  font-size:9px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(20,7,9,.94);
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:90vw;
+  max-height:88vh;
+  object-fit:contain;
+}
+
+.close{
+  position:absolute;
+  right:30px;
+  top:20px;
+  color:white;
+  font-size:38px;
+  cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .navLinks{
+    display:none;
+    position:absolute;
+    left:0;
+    top:72px;
+    width:100%;
+    background:var(--cream);
+    flex-direction:column;
+    padding:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+  }
+
+  .navLinks.active{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .navButton{
+    display:none;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding-top:125px;
+  }
+
+  .heroText{
+    margin:auto;
+  }
+
+  .heroDescription{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .heroVisual{
+    height:480px;
+  }
+
+  .heroImage{
+    width:310px;
+    height:410px;
+  }
+
+  .heroCircle{
+    width:360px;
+    height:430px;
+  }
+
+  .categoryGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .category:last-child{
+    grid-column:span 2;
+  }
+
+  .productGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .aboutGrid{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .contactGrid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  section{
+    padding:75px 5%;
+  }
+
+  .logoText{
+    font-size:23px;
+  }
+
+  .hero h1{
+    font-size:60px;
+  }
+
+  .heroVisual{
+    height:430px;
+  }
+
+  .heroImage{
+    width:275px;
+    height:370px;
+  }
+
+  .heroCircle{
+    width:315px;
+    height:390px;
+  }
+
+  .category{
+    height:235px;
+  }
+
+  .productGrid{
+    grid-template-columns:1fr;
+  }
+
+  .productImage{
+    height:430px;
+  }
+
+  .about h2,
+  .contact h2{
+    font-size:48px;
+  }
+
+  .locationBox{
+    min-height:280px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<header id="header">
 
-  <header id="header">
-    <nav class="nav">
+<nav class="nav">
 
-      <a href="#" class="brand">
-        SHIKHA<span>'Z</span>
-      </a>
+<a href="#home" class="logoText">
+SHIKHA<span>'Z</span>
+</a>
 
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">About</a>
-        <a href="#how">How It Works</a>
-        <a href="#contact">Contact</a>
-      </div>
+<div class="navLinks" id="navLinks">
 
-      <a class="nav-btn" href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20know%20about%20your%20rental%20collection.">
-        WhatsApp
-      </a>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#collection">Collection</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 
-      <div class="menu" onclick="toggleMenu()">☰</div>
+</div>
 
-    </nav>
-  </header>
+<a class="navButton"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20explore%20your%20collection.">
+WhatsApp
+</a>
 
+<div class="menu" onclick="toggleMenu()">☰</div>
 
-  <!-- HERO -->
+</nav>
 
-  <section class="hero" id="home">
+</header>
 
-    <div class="hero-content">
 
-      <div class="eyebrow">
-        Premium Fashion Rental Boutique
-      </div>
+<!-- HERO -->
 
-      <h1>
-        Your Style.
-        <span>Your Moment.</span>
-      </h1>
+<section class="hero" id="home">
 
-      <p class="hero-text">
-        Discover elegant fashion for your most special moments.
-        From dreamy lehengas to statement gowns, find your perfect
-        look without buying the wardrobe.
-      </p>
+<div class="heroText">
 
-      <div class="hero-buttons">
+<div class="kicker">
+Premium Fashion Rental Boutique
+</div>
 
-        <a href="#collections" class="btn btn-primary">
-          Explore Collection
-        </a>
+<h1>
+Your Style.
+<span>Your Moment.</span>
+</h1>
 
-        <a href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20book%20an%20outfit."
-           class="btn btn-outline">
-          Rent Your Look
-        </a>
+<p class="heroDescription">
+Discover elegant fashion for weddings, celebrations, parties
+and every special occasion. From dreamy lehengas to statement
+gowns — find your perfect look without buying the wardrobe.
+</p>
 
-      </div>
+<div class="buttons">
 
-    </div>
+<a href="#collection" class="btn primary">
+Explore Collection
+</a>
 
+<a href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20book%20an%20outfit."
+class="btn outline">
+Rent Your Look
+</a>
 
-    <div class="hero-image">
+</div>
 
-      <img
-        class="fashion-img"
-        src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85"
-        alt="Elegant ethnic fashion">
+</div>
 
-      <div class="floating-card">
-        <small>Rental Collection</small>
-        <strong>₹1,500 – ₹7,000</strong>
-      </div>
 
-    </div>
+<div class="heroVisual">
 
-  </section>
+<div class="heroCircle"></div>
 
+<img
+class="heroImage"
+src="lehenga-01.jpg.jpeg"
+alt="Shikha'Z Rental Lehenga">
 
-  <!-- CATEGORIES -->
+<div class="priceCard">
 
-  <section class="categories">
+<small>Rental Collection</small>
 
-    <div class="section-head">
+<strong>₹1,500 – ₹7,000</strong>
 
-      <div class="section-kicker">
-        Explore The Collection
-      </div>
+</div>
 
-      <h2 class="section-title">
-        Dress For The Moment
-      </h2>
+</div>
 
-      <p class="section-desc">
-        Curated styles for weddings, celebrations, parties and
-        every occasion worth dressing up for.
-      </p>
+</section>
 
-    </div>
 
+<!-- CATEGORIES -->
 
-    <div class="category-grid">
+<section class="categories" id="categories">
 
-      <a href="#collections" class="category">
-        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80" alt="Lehenga">
-        <div class="category-info">
-          <h3>Lehenga</h3>
-          <p>Bridal • Festive • Designer</p>
-        </div>
-      </a>
+<div class="sectionHead">
 
-      <a href="#collections" class="category">
-        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=700&q=80" alt="Saree">
-        <div class="category-info">
-          <h3>Saree</h3>
-          <p>Elegant • Classic • Luxe</p>
-        </div>
-      </a>
+<div class="kicker">
+Explore The Collection
+</div>
 
-      <a href="#collections" class="category">
-        <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=700&q=80" alt="Suits">
-        <div class="category-info">
-          <h3>Suits</h3>
-          <p>Graceful • Chic • Elegant</p>
-        </div>
-      </a>
+<h2 class="sectionTitle">
+Dress For The Moment
+</h2>
 
-      <a href="#collections" class="category">
-        <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=700&q=80" alt="Gown">
-        <div class="category-info">
-          <h3>Gowns</h3>
-          <p>Glam • Party • Evening</p>
-        </div>
-      </a>
+<p class="sectionDescription">
+Curated fashion for weddings, celebrations, parties and
+every occasion worth dressing up for.
+</p>
 
-      <a href="#collections" class="category">
-        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=700&q=80" alt="Indo Western">
-        <div class="category-info">
-          <h3>Indo-Western</h3>
-          <p>Modern • Trendy • Unique</p>
-        </div>
-      </a>
+</div>
 
-    </div>
 
-  </section>
+<div class="categoryGrid">
 
+<a href="#collection" class="category">
 
-  <!-- COLLECTION -->
+<img src="lehenga-01.jpg.jpeg" alt="Lehenga">
 
-  <section class="collection" id="collections">
+<div class="categoryInfo">
+<h3>Lehenga</h3>
+<p>Bridal • Festive • Designer</p>
+</div>
 
-    <div class="section-head">
+</a>
 
-      <div class="section-kicker">
-        Our Collection
-      </div>
 
-      <h2 class="section-title">
-        Looks You'll Love
-      </h2>
+<a href="#collection" class="category">
 
-      <p class="section-desc">
-        Premium styles available for rent at accessible prices.
-        New designs are added regularly.
-      </p>
+<img src="lehenga-06.jpg.jpeg" alt="Saree">
 
-    </div>
+<div class="categoryInfo">
+<h3>Saree</h3>
+<p>Elegant • Classic • Luxe</p>
+</div>
 
+</a>
 
-    <div class="collection-grid">
 
-      <article class="product">
+<a href="#collection" class="category">
 
-        <div class="product-img">
+<img src="lehenga-10.jpg.jpeg" alt="Suits">
 
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85" alt="Royal Lehenga">
+<div class="categoryInfo">
+<h3>Suits</h3>
+<p>Graceful • Chic • Elegant</p>
+</div>
 
-          <div class="tag">Featured</div>
+</a>
 
-        </div>
 
-        <div class="product-info">
+<a href="#collection" class="category">
 
-          <div class="product-category">Lehenga</div>
+<img src="lehenga-15.jpg" alt="Gown">
 
-          <h3>Royal Celebration</h3>
+<div class="categoryInfo">
+<h3>Gown</h3>
+<p>Glam • Party • Evening</p>
+</div>
 
-          <div class="price">
-            ₹3,500 <span>/ rental</span>
-          </div>
+</a>
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20a%20Lehenga%20rental.">
-            Enquire on WhatsApp
-          </a>
 
-        </div>
+<a href="#collection" class="category">
 
-      </article>
+<img src="lehenga-20.jpg.jpeg" alt="Indo Western">
 
+<div class="categoryInfo">
+<h3>Indo-Western</h3>
+<p>Modern • Trendy • Unique</p>
+</div>
 
-      <article class="product">
+</a>
 
-        <div class="product-img">
+</div>
 
-          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=85" alt="Designer Saree">
+</section>
 
-        </div>
 
-        <div class="product-info">
+<!-- LEHENGA COLLECTION -->
 
-          <div class="product-category">Saree</div>
+<section class="collection" id="collection">
 
-          <h3>Elegant Drapes</h3>
+<div class="sectionHead">
 
-          <div class="price">
-            ₹2,500 <span>/ rental</span>
-          </div>
+<div class="kicker">
+Shikha'Z Lehenga Collection
+</div>
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20a%20Saree%20rental.">
-            Enquire on WhatsApp
-          </a>
+<h2 class="sectionTitle">
+Our Signature Lehengas
+</h2>
 
-        </div>
+<p class="sectionDescription">
+Explore our latest Lehenga collection. Choose your favourite
+design and enquire directly on WhatsApp.
+</p>
 
-      </article>
+</div>
 
 
-      <article class="product">
+<div class="productGrid">
 
-        <div class="product-img">
 
-          <img src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=85" alt="Designer Suit">
+<!-- 01 -->
 
-        </div>
+<article class="product">
 
-        <div class="product-info">
+<div class="productImage"
+onclick="openImage('lehenga-01.jpg.jpeg')">
 
-          <div class="product-category">Suits</div>
+<img src="lehenga-01.jpg.jpeg" alt="Lehenga 01">
 
-          <h3>Graceful Edit</h3>
+<div class="productNumber">01</div>
 
-          <div class="price">
-            ₹1,800 <span>/ rental</span>
-          </div>
+</div>
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20a%20Suit%20rental.">
-            Enquire on WhatsApp
-          </a>
+<div class="productInfo">
 
-        </div>
+<div class="productCategory">Lehenga</div>
 
-      </article>
+<h3>Royal Edit 01</h3>
 
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-      <article class="product">
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2001.">
+Enquire on WhatsApp
+</a>
 
-        <div class="product-img">
+</div>
 
-          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=85" alt="Luxury Gown">
+</article>
 
-        </div>
 
-        <div class="product-info">
+<!-- 02 -->
 
-          <div class="product-category">Gown</div>
+<article class="product">
 
-          <h3>Evening Glam</h3>
+<div class="productImage"
+onclick="openImage('lehenga-02.jpg.jpeg')">
 
-          <div class="price">
-            ₹4,500 <span>/ rental</span>
-          </div>
+<img src="lehenga-02.jpg.jpeg" alt="Lehenga 02">
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20a%20Gown%20rental.">
-            Enquire on WhatsApp
-          </a>
+<div class="productNumber">02</div>
 
-        </div>
+</div>
 
-      </article>
+<div class="productInfo">
 
+<div class="productCategory">Lehenga</div>
 
-      <article class="product">
+<h3>Royal Edit 02</h3>
 
-        <div class="product-img">
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-          <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=85" alt="Indo Western">
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2002.">
+Enquire on WhatsApp
+</a>
 
-        </div>
+</div>
 
-        <div class="product-info">
+</article>
 
-          <div class="product-category">Indo-Western</div>
 
-          <h3>Modern Muse</h3>
+<!-- 03 -->
 
-          <div class="price">
-            ₹3,000 <span>/ rental</span>
-          </div>
+<article class="product">
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20an%20Indo-Western%20rental.">
-            Enquire on WhatsApp
-          </a>
+<div class="productImage" onclick="openImage('lehenga-03.jpg.jpeg')">
 
-        </div>
+<img src="lehenga-03.jpg.jpeg" alt="Lehenga 03">
 
-      </article>
+<div class="productNumber">03</div>
 
+</div>
 
-      <article class="product">
+<div class="productInfo">
 
-        <div class="product-img">
+<div class="productCategory">Lehenga</div>
 
-          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=85" alt="Luxury Collection">
+<h3>Royal Edit 03</h3>
 
-        </div>
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-        <div class="product-info">
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2003.">
+Enquire on WhatsApp
+</a>
 
-          <div class="product-category">Premium Edit</div>
+</div>
 
-          <h3>Statement Look</h3>
+</article>
 
-          <div class="price">
-            ₹7,000 <span>/ rental</span>
-          </div>
 
-          <a class="rent-btn"
-             href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20your%20Premium%20Collection.">
-            Enquire on WhatsApp
-          </a>
+<!-- 04 -->
 
-        </div>
+<article class="product">
 
-      </article>
+<div class="productImage" onclick="openImage('lehenga-04.jpg.jpeg')">
 
-    </div>
+<img src="lehenga-04.jpg.jpeg" alt="Lehenga 04">
 
-  </section>
+<div class="productNumber">04</div>
 
+</div>
 
-  <!-- ABOUT -->
+<div class="productInfo">
 
-  <section class="about" id="about">
+<div class="productCategory">Lehenga</div>
 
-    <div class="about-inner">
+<h3>Royal Edit 04</h3>
 
-      <div class="about-badge">
-        <span>Shikha'Z</span>
-      </div>
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-      <div>
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2004.">
+Enquire on WhatsApp
+</a>
 
-        <div class="section-kicker">
-          The Shikha'Z Story
-        </div>
+</div>
 
-        <h2>
-          Luxury Looks.<br>
-          Without The Commitment.
-        </h2>
+</article>
 
-        <p>
-          Shikha'Z Rental brings stylish, elegant and occasion-ready
-          fashion to Purnea. Our collection is designed for those
-          special moments when you want to look unforgettable —
-          without buying an outfit you'll wear only once.
-        </p>
 
-        <div class="about-points">
+<!-- 05 -->
 
-          <div class="point">
-            <strong>₹1.5K+</strong>
-            <span>Rental Starting</span>
-          </div>
+<article class="product">
 
-          <div class="point">
-            <strong>5+</strong>
-            <span>Fashion Categories</span>
-          </div>
+<div class="productImage" onclick="openImage('lehenga-05.jpg.jpeg')">
 
-          <div class="point">
-            <strong>Premium</strong>
-            <span>Curated Collection</span>
-          </div>
+<img src="lehenga-05.jpg.jpeg" alt="Lehenga 05">
 
-        </div>
+<div class="productNumber">05</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="productInfo">
 
-  </section>
+<div class="productCategory">Lehenga</div>
 
+<h3>Royal Edit 05</h3>
 
-  <!-- HOW IT WORKS -->
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-  <section class="steps" id="how">
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2005.">
+Enquire on WhatsApp
+</a>
 
-    <div class="section-head">
+</div>
 
-      <div class="section-kicker">
-        Simple & Easy
-      </div>
+</article>
 
-      <h2 class="section-title">
-        How Rental Works
-      </h2>
 
-    </div>
+<!-- 06 -->
 
+<article class="product">
 
-    <div class="steps-grid">
+<div class="productImage" onclick="openImage('lehenga-06.jpg.jpeg')">
 
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3>Choose Your Look</h3>
-        <p>
-          Browse our collection and find the outfit
-          that matches your occasion and style.
-        </p>
-      </div>
+<img src="lehenga-06.jpg.jpeg" alt="Lehenga 06">
 
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3>Enquire With Us</h3>
-        <p>
-          Message us on WhatsApp with your preferred
-          outfit and rental date.
-        </p>
-      </div>
+<div class="productNumber">06</div>
 
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3>Rent & Celebrate</h3>
-        <p>
-          Visit our store, finalize your look and
-          get ready to make your moment memorable.
-        </p>
-      </div>
+</div>
 
-    </div>
+<div class="productInfo">
 
-  </section>
+<div class="productCategory">Lehenga</div>
 
+<h3>Royal Edit 06</h3>
 
-  <!-- CTA -->
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-  <section class="cta">
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2006.">
+Enquire on WhatsApp
+</a>
 
-    <div class="section-kicker">
-      Your Perfect Look Awaits
-    </div>
+</div>
 
-    <h2>
-      Rent. Style. Celebrate.
-    </h2>
+</article>
 
-    <p>
-      Looking for something special for your next wedding,
-      party or celebration? Let's find your perfect outfit.
-    </p>
 
-    <a href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20explore%20your%20collection."
-       class="btn btn-primary">
-      Start Your Enquiry
-    </a>
+<!-- 07 -->
 
-  </section>
+<article class="product">
 
+<div class="productImage" onclick="openImage('lehenga-07.jpg.jpeg')">
 
-  <!-- CONTACT -->
+<img src="lehenga-07.jpg.jpeg" alt="Lehenga 07">
 
-  <section class="contact" id="contact">
+<div class="productNumber">07</div>
 
-    <div class="contact-grid">
+</div>
 
-      <div>
+<div class="productInfo">
 
-        <div class="section-kicker">
-          Visit Shikha'Z
-        </div>
+<div class="productCategory">Lehenga</div>
 
-        <h2>
-          Come Find<br>
-          Your Look.
-        </h2>
+<h3>Royal Edit 07</h3>
 
-        <p class="contact-text">
-          Visit our store in Purnea and explore our curated
-          rental collection in person.
-        </p>
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2007.">
+Enquire on WhatsApp
+</a>
 
-        <div class="contact-item">
+</div>
 
-          <div class="contact-icon">⌖</div>
+</article>
 
-          <div>
-            <small>Store Address</small>
-            <p>
-              City Kalibari Road,<br>
-              Opp. Of Shri Dham Mandir,<br>
-              Purnea, Bihar – 854301
-            </p>
-          </div>
 
-        </div>
+<!-- 08 -->
 
+<article class="product">
 
-        <div class="contact-item">
+<div class="productImage" onclick="openImage('lehenga-08.jpg.jpeg')">
 
-          <div class="contact-icon">☎</div>
+<img src="lehenga-08.jpg.jpeg" alt="Lehenga 08">
 
-          <div>
-            <small>WhatsApp / Contact</small>
-            <a href="tel:+916204501326">
-              +91 62045 01326
-            </a>
-          </div>
+<div class="productNumber">08</div>
 
-        </div>
+</div>
 
+<div class="productInfo">
 
-        <div class="contact-item">
+<div class="productCategory">Lehenga</div>
 
-          <div class="contact-icon">◎</div>
+<h3>Royal Edit 08</h3>
 
-          <div>
-            <small>Instagram</small>
-            <a href="https://www.instagram.com/shikha_z_rental/" target="_blank">
-              @shikha_z_rental
-            </a>
-          </div>
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-        </div>
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2008.">
+Enquire on WhatsApp
+</a>
 
-      </div>
+</div>
 
+</article>
 
-      <div class="map">
 
-        <div class="map-card">
+<!-- 09 -->
 
-          <strong>Shikha'Z Rental</strong>
+<article class="product">
 
-          <p style="margin:7px 0 14px; font-size:12px; color:#806f68;">
-            City Kalibari Road, Purnea
-          </p>
+<div class="productImage" onclick="openImage('lehenga-09.jpg.jpeg')">
 
-          <a
-            href="https://www.google.com/maps/search/?api=1&query=Shri+Dham+Mandir+Purnea+Bihar"
-            target="_blank"
-            class="btn btn-primary"
-            style="width:100%;">
-            Open Location
-          </a>
+<img src="lehenga-09.jpg.jpeg" alt="Lehenga 09">
 
-        </div>
+<div class="productNumber">09</div>
 
-      </div>
+</div>
 
-    </div>
+<div class="productInfo">
 
-  </section>
+<div class="productCategory">Lehenga</div>
 
+<h3>Royal Edit 09</h3>
 
-  <!-- FOOTER -->
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-  <footer>
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2009.">
+Enquire on WhatsApp
+</a>
 
-    <div class="footer-brand">
-      SHIKHA<span>'Z</span> RENTAL
-    </div>
+</div>
 
-    <p>
-      RENT • STYLE • CELEBRATE
-    </p>
+</article>
 
-    <div class="social">
 
-      <a href="https://www.instagram.com/shikha_z_rental/" target="_blank">
-        Instagram
-      </a>
+<!-- 10 -->
 
-      <a href="https://wa.me/916204501326" target="_blank">
-        WhatsApp
-      </a>
+<article class="product">
 
-    </div>
+<div class="productImage" onclick="openImage('lehenga-10.jpg.jpeg')">
 
-    <div class="copyright">
-      © 2026 Shikha'Z Rental. All Rights Reserved.
-    </div>
+<img src="lehenga-10.jpg.jpeg" alt="Lehenga 10">
 
-  </footer>
+<div class="productNumber">10</div>
 
+</div>
 
-  <script>
+<div class="productInfo">
 
-    /* Navbar background */
+<div class="productCategory">Lehenga</div>
 
-    const header = document.getElementById("header");
+<h3>Royal Edit 10</h3>
 
-    window.addEventListener("scroll", () => {
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-      if (window.scrollY > 40) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2010.">
+Enquire on WhatsApp
+</a>
 
-    });
+</div>
 
+</article>
 
-    /* Mobile menu */
 
-    function toggleMenu() {
+<!-- 11 -->
 
-      const menu = document.getElementById("navLinks");
+<article class="product">
 
-      menu.classList.toggle("active");
+<div class="productImage" onclick="openImage('lehenga-11.jpg.jpeg')">
 
-    }
+<img src="lehenga-11.jpg.jpeg" alt="Lehenga 11">
 
+<div class="productNumber">11</div>
 
-    /* Close mobile menu after click */
+</div>
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+<div class="productInfo">
 
-      link.addEventListener("click", () => {
+<div class="productCategory">Lehenga</div>
 
-        document.getElementById("navLinks").classList.remove("active");
+<h3>Royal Edit 11</h3>
 
-      });
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
 
-    });
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2011.">
+Enquire on WhatsApp
+</a>
 
-  </script>
+</div>
+
+</article>
+
+
+<!-- 12 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-12.jpg.jpeg')">
+
+<img src="lehenga-12.jpg.jpeg" alt="Lehenga 12">
+
+<div class="productNumber">12</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 12</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2012.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 13 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-13.jpg.jpeg')">
+
+<img src="lehenga-13.jpg.jpeg" alt="Lehenga 13">
+
+<div class="productNumber">13</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 13</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2013.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 14 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-14.jpg')">
+
+<img src="lehenga-14.jpg" alt="Lehenga 14">
+
+<div class="productNumber">14</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 14</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2014.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 15 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-15.jpg')">
+
+<img src="lehenga-15.jpg" alt="Lehenga 15">
+
+<div class="productNumber">15</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 15</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2015.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 16 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-16.jpg')">
+
+<img src="lehenga-16.jpg" alt="Lehenga 16">
+
+<div class="productNumber">16</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 16</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2016.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 17 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-17.jpg.jpeg')">
+
+<img src="lehenga-17.jpg.jpeg" alt="Lehenga 17">
+
+<div class="productNumber">17</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 17</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2017.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 18 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-18.jpg.jpeg')">
+
+<img src="lehenga-18.jpg.jpeg" alt="Lehenga 18">
+
+<div class="productNumber">18</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 18</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2018.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 19 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-19.jpg.jpeg')">
+
+<img src="lehenga-19.jpg.jpeg" alt="Lehenga 19">
+
+<div class="productNumber">19</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 19</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2019.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 20 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-20.jpg.jpeg')">
+
+<img src="lehenga-20.jpg.jpeg" alt="Lehenga 20">
+
+<div class="productNumber">20</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 20</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2020.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 21 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-21.jpg.jpeg')">
+
+<img src="lehenga-21.jpg.jpeg" alt="Lehenga 21">
+
+<div class="productNumber">21</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 21</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2021.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 22 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-22.jpg.jpeg')">
+
+<img src="lehenga-22.jpg.jpeg" alt="Lehenga 22">
+
+<div class="productNumber">22</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 22</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2022.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 23 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-23.jpg.jpeg')">
+
+<img src="lehenga-23.jpg.jpeg" alt="Lehenga 23">
+
+<div class="productNumber">23</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 23</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2023.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+<!-- 24 -->
+
+<article class="product">
+
+<div class="productImage" onclick="openImage('lehenga-24.jpg.jpeg')">
+
+<img src="lehenga-24.jpg.jpeg" alt="Lehenga 24">
+
+<div class="productNumber">24</div>
+
+</div>
+
+<div class="productInfo">
+
+<div class="productCategory">Lehenga</div>
+
+<h3>Royal Edit 24</h3>
+
+<div class="productPrice">₹3,500 <span>/ rental</span></div>
+
+<a class="whatsappBtn"
+href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%27m%20interested%20in%20Lehenga%2024.">
+Enquire on WhatsApp
+</a>
+
+</div>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="aboutGrid">
+
+<div class="aboutBadge">
+<span>Shikha'Z</span>
+</div>
+
+<div>
+
+<div class="kicker">
+The Shikha'Z Story
+</div>
+
+<h2>
+Luxury Looks.<br>
+Without The Commitment.
+</h2>
+
+<p>
+Shikha'Z Rental brings stylish, elegant and occasion-ready
+fashion to Purnea. Our collection is curated for those
+special moments when you want to look unforgettable —
+without buying an outfit you'll wear only once.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<strong>₹1.5K+</strong>
+<span>Starting Rental</span>
+</div>
+
+<div class="stat">
+<strong>5+</strong>
+<span>Categories</span>
+</div>
+
+<div class="stat">
+<strong>24+</strong>
+<span>Lehenga Designs</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="how">
+
+<div class="sectionHead">
+
+<div class="kicker">
+Simple & Easy
+</div>
+
+<h2 class="sectionTitle">
+How Rental Works
+</h2>
+
+</div>
+
+<div class="steps">
+
+<div class="step">
+
+<div class="stepNumber">01</div>
+
+<h3>Choose Your Look</h3>
+
+<p>
+Browse our collection and find the outfit
+that matches your occasion and style.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="stepNumber">02</div>
+
+<h3>Enquire With Us</h3>
+
+<p>
+Send us a WhatsApp enquiry with your
+preferred outfit and rental date.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="stepNumber">03</div>
+
+<h3>Rent & Celebrate</h3>
+
+<p>
+Visit our store, finalize your look and
+get ready for your special occasion.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="kicker">
+Your Perfect Look Awaits
+</div>
+
+<h2>
+Rent. Style. Celebrate.
+</h2>
+
+<p>
+Looking for something special for your next wedding,
+party or celebration? Let's find your perfect outfit.
+</p>
+
+<a href="https://wa.me/916204501326?text=Hello%20Shikha%27Z%20Rental%2C%20I%20want%20to%20explore%20your%20collection."
+class="btn primary">
+Start Your Enquiry
+</a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="contactGrid">
+
+<div>
+
+<div class="kicker">
+Visit Shikha'Z
+</div>
+
+<h2>
+Come Find<br>
+Your Look.
+</h2>
+
+<p class="contactText">
+Visit our store in Purnea and explore our curated
+rental collection in person.
+</p>
+
+
+<div class="contactItem">
+
+<div class="contactIcon">⌖</div>
+
+<div>
+
+<small>Store Address</small>
+
+<p>
+City Kalibari Road,<br>
+Opp. Of Shri Dham Mandir,<br>
+Purnea, Bihar – 854301
+</p>
+
+</div>
+
+</div>
+
+
+<div class="contactItem">
+
+<div class="contactIcon">☎</div>
+
+<div>
+
+<small>WhatsApp / Contact</small>
+
+<a href="tel:+916204501326">
++91 62045 01326
+</a>
+
+</div>
+
+</div>
+
+
+<div class="contactItem">
+
+<div class="contactIcon">◎</div>
+
+<div>
+
+<small>Instagram</small>
+
+<a href="https://www.instagram.com/shikha_z_rental/"
+target="_blank">
+@shikha_z_rental
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="locationBox">
+
+<div class="locationCard">
+
+<strong>Shikha'Z Rental</strong>
+
+<p style="margin:7px 0 14px;font-size:12px;color:#806e67;">
+City Kalibari Road, Opp. Of Shri Dham Mandir, Purnea
+</p>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Shri+Dham+Mandir+Purnea+Bihar"
+target="_blank"
+class="btn primary"
+style="width:100%;text-align:center;">
+Open Location
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footerLogo">
+SHIKHA<span>'Z</span> RENTAL
+</div>
+
+<p>
+RENT • STYLE • CELEBRATE
+</p>
+
+<div class="social">
+
+<a href="https://www.instagram.com/shikha_z_rental/"
+target="_blank">
+Instagram
+</a>
+
+<a href="https://wa.me/916204501326"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+<div class="copyright">
+© 2026 Shikha'Z Rental. All Rights Reserved.
+</div>
+
+</footer>
+
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+
+<div class="close">×</div>
+
+<img id="lightboxImage" src="" alt="Shikha'Z Rental">
+
+</div>
+
+
+<script>
+
+const header=document.getElementById("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>40){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+
+});
+
+
+function toggleMenu(){
+
+document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+
+document.querySelectorAll(".navLinks a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+document.getElementById("navLinks").classList.remove("active");
+
+});
+
+});
+
+
+function openImage(src){
+
+const lightbox=document.getElementById("lightbox");
+const image=document.getElementById("lightboxImage");
+
+image.src=src;
+lightbox.classList.add("active");
+
+}
+
+
+function closeImage(){
+
+document.getElementById("lightbox").classList.remove("active");
+
+}
+
+</script>
 
 </body>
 </html>
